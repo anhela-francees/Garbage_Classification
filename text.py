@@ -175,9 +175,9 @@ criterion = nn.CrossEntropyLoss()
 # Training loop
 for epoch in range(EPOCHS):
     train_loss = train(model, train_loader, optimizer, criterion, device)
-    print(f'Epoch: {epoch+1}, Train Loss: {train_loss:.4f}')
+    print(f"Epoch: {epoch+1}, Train Loss: {train_loss:.4f}")
     val_loss = evaluate(model, val_loader, criterion, device)
-    print(f'Epoch: {epoch+1}, Val Loss: {val_loss:.4f}')
+    print(f"Epoch: {epoch+1}, Val Loss: {val_loss:.4f}")
     if val_loss < best_loss:
         torch.save(model.state_dict(), 'best_model.pth')
         
