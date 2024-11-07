@@ -49,9 +49,13 @@ testloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_
 
 class_names = train_dataset.classes
 print(class_names)
-print("Train set:", len(trainloader)*batch_size)
+print("Train set:", len(trainloader)*batch_size) # due to batch size setting, the number of batches is rounded 
+                                                 # and the multiplication yields a higher number of samples in the dataset
+print("train:", len(train_dataset)) # this is the actual number of samples in the dataset
 print("Val set:", len(valloader)*batch_size)
+print("Val:", len(val_dataset))
 print("Test set:", len(testloader)*batch_size)
+print("Test:", len(test_dataset))
 
 train_iterator = iter(trainloader)
 train_batch = next(train_iterator)
